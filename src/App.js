@@ -16,6 +16,21 @@ export default class App extends Component {
         filter: '',
     };
 
+    componentDidUpdate(prevProps, prevState) {
+        if (this.state.contacts !== prevState.contacts) {
+            localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+        }
+    }
+    componentDidMount() {
+        const contactsGot = JSON.parse(localStorage.getItem('contacts'));
+        if (contactsGot === null) {
+            this.setState({ contacts: [] });
+        } else {
+            this.setState({ contacts: contactsGot });
+        }
+    }
+
+
     addContact = ({ name, number }) => {
         const contact = { id: shortid.generate(), name, number };
 
@@ -57,9 +72,11 @@ export default class App extends Component {
         }));
     };
 
+
     render() {
         const { filter } = this.state;
         const visibleValue = this.filteredList();
+
 
         return (
             <div className={style.wrapper}>

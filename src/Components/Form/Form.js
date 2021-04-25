@@ -7,6 +7,7 @@ export default class Form extends Component {
         number: '',
     };
 
+
     handleInputChange = e => {
         const { name, value } = e.currentTarget;
 
@@ -15,10 +16,9 @@ export default class Form extends Component {
 
     handleFormSubmit = e => {
         e.preventDefault();
-
         this.props.onSubmit(this.state);
-
         this.reset();
+
     };
 
     reset = () => {
