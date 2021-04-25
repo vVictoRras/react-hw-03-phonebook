@@ -1,0 +1,30 @@
+.listItem{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    }
+.name{
+    margin-right: 20px;
+}
+.number{
+    font-style: italic;
+
+}
+.btn{
+    padding:3px;
+    background:#f8a035;
+    color:#fff;
+    border:none;
+    border-radius: 10px;
+    display: flex;
+    width: 50px;
+    margin-left: 10px;
+
+}
+.btn:hover{
+    border: 2px solid rgb(69, 102, 109);
+}
+.shadow{
+    text-shadow: 2px 2px 2px  #ff80bf
+}
